@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Recipe Journal</h1>
-  {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}!</p>
-    <a href="{% url 'recipe-index' %}">Go to My Recipes</a>
-  {% else %}
-    <p>Save your favorite recipes.</p>
-    <a href="{% url 'login' %}">Login</a> or <a href="{% url 'signup' %}">Sign up</a>
-  {% endif %}
+
+<div class="home-content">
+  <p>Welcome, {{ user.username }}!</p>
+  <a href="{% url 'recipe-index' %}" class="btn submit">Go to My Recipes</a>
+</div>
+
 {% endblock %}

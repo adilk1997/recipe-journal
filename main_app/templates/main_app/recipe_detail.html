@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="recipe-detail">
+
+    <h1>{{ recipe.title }}</h1>
+
+    {% if recipe.category %}
+    <p><strong>Category:</strong> {{ recipe.category }}</p>
+    {% endif %}
+
+    <p><strong>Prep:</strong> {{ recipe.prep_time }} min</p>
+    <p><strong>Cook:</strong> {{ recipe.cook_time }} min</p>
+
+    <h3>Ingredients</h3>
+    <ol class="recipe-steps">
+        {% for line in recipe.ingredients.splitlines %}
+        {% if line %}
+        <li>{{ line|cut:"-" }}</li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+
+    <h3>Instructions</h3>
+    <ol class="recipe-steps">
+        {% for line in recipe.instructions.splitlines %}
+        {% if line %}
+        <li>{{ line }}</li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+
+    <div class="recipe-actions">
+        <a href="{% url 'recipe-update' recipe.id %}" class="btn secondary">Edit</a>
+        <a href="{% url 'recipe-delete' recipe.id %}" class="btn danger">Delete</a>
+    </div>
+
+    <div style="margin-top:15px;">
+        <a href="{% url 'recipe-index' %}" class="btn">Back</a>
+    </div>
+
+</section>
+
+{% endblock %}

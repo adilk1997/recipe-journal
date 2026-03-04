@@ -1,0 +1,90 @@
+
+.recipe-card {
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  padding: 16px;
+  margin: 15px 0;
+  box-shadow: var(--card-box-shadow);
+  background-color: white;
+}
+
+.recipe-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 2.2rem;  
+  font-weight: 700;
+}
+
+.recipe-meta {
+  font-size: var(--font-reg);
+  color: #555;
+}
+
+.recipe-actions {
+  margin-top: 10px;
+}
+
+.recipe-detail {
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  padding: 20px;
+  box-shadow: var(--card-box-shadow);
+  background-color: white;
+  margin-top: 20px;
+}
+
+.recipe-detail h1 {
+  margin-top: 0;
+}
+
+.section-title {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.category-card {
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--card-box-shadow);
+}
+
+.category-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.category-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.recipe-detail {
+  font-size: 1.9rem;
+  line-height: 1.6;
+}
+
+.recipe-detail h1 {
+  font-size: 3.2rem;
+  margin-bottom: 15px;
+}
+
+.recipe-detail h3 {
+  font-size: 2.2rem;
+  margin-top: 25px;
+}
+
+.recipe-detail p {
+  margin: 8px 0;
+}
+
+.recipe-list,
+.recipe-steps {
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+
+.recipe-list li,
+.recipe-steps li {
+  margin: 6px 0;
+}

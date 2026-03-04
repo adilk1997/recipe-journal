@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>About</h1>
-  <p>A simple recipe journal app built with Django.</p>
+
+<section class="info-card">
+  <h1>About Recipe Journal</h1>
+
+  <p class="info-text">
+    Recipe Journal is a simple Django app where you can save your recipes and organize them by category.
+  </p>
+
+  <h2>What you can do</h2>
+  <ul class="info-list">
+    <li>Create, view, edit, and delete your own recipes</li>
+    <li>Create categories and assign them to recipes</li>
+    <li>Login required — your data is private to your account</li>
+  </ul>
+
+  <a href="{% url 'recipe-index' %}" class="btn submit">Go to My Recipes</a>
+</section>
+
 {% endblock %}

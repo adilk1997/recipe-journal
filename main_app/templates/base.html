@@ -1,25 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>Recipe Journal</title>
-  </head>
-  <body>
-    <nav>
-      <a href="{% url 'home' %}">Home</a>
-      <a href="{% url 'about' %}">About</a>
-      {% if user.is_authenticated %}
-        <a href="{% url 'recipe-index' %}">My Recipes</a>
-        <form action="{% url 'logout' %}" method="post" style="display:inline;">
-          {% csrf_token %}
-          <button type="submit">Logout</button>
-        </form>
-      {% else %}
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'signup' %}">Sign up</a>
-      {% endif %}
-    </nav>
-    <hr />
-    {% block content %}{% endblock %}
-  </body>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/recipes.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="header-logo-container">
+            <a href="{% url 'home' %}" style="text-decoration:none; color:inherit;">
+                <h2>Recipe Journal</h2>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'recipe-index' %}">My Recipes</a></li>
+                <li><a href="{% url 'category-index' %}">Categories</a></li>
+                <li>
+                    <form id="logout-form" action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
 </html>

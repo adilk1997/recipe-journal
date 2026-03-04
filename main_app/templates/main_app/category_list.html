@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>My Categories</h1>
+
+<p><a href="{% url 'category-create' %}" class="btn submit">+ Add Category</a></p>
+
+{% for category in object_list %}
+<div class="category-card">
+  <h3 class="category-title">{{ category.name }}</h3>
+
+  <div class="category-actions">
+    <a href="{% url 'category-update' category.id %}" class="btn secondary">Edit</a>
+    <a href="{% url 'category-delete' category.id %}" class="btn danger">Delete</a>
+  </div>
+</div>
+{% empty %}
+  <p>No categories yet.</p>
+{% endfor %}
+{% endblock %}

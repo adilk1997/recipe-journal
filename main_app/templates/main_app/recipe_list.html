@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/recipes.css' %}">
+
+{% block content %}
+<h1>My Recipes</h1>
+
+<p><a href="{% url 'recipe-create' %}" class="btn submit">+ Add Recipe</a></p>
+
+{% for recipe in object_list %}
+  <div class="recipe-card">
+    <h3>
+      <a href="{% url 'recipe-detail' recipe.id %}">
+        {{ recipe.title }}
+      </a>
+    </h3>
+
+    <div class="recipe-meta">
+      Prep: {{ recipe.prep_time }} min |
+      Cook: {{ recipe.cook_time }} min
+      {% if recipe.category %}
+        | Category: {{ recipe.category }}
+      {% endif %}
+    </div>
+  </div>
+{% empty %}
+  <p>No recipes yet.</p>
+{% endfor %}
+{% endblock %}
