@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="home-content">
-  <p>Welcome, {{ user.username }}!</p>
-  <a href="{% url 'recipe-index' %}" class="btn submit">Go to My Recipes</a>
+<div class="home-background">
+
+  <div class="home-content">
+
+    <h2>Welcome, {{ user.username }}!</h2>
+
+    <a href="{% url 'recipe-index' %}" class="btn submit">
+      Go to My Recipes
+    </a>
+
+  </div>
+
 </div>
 
 {% endblock %}
