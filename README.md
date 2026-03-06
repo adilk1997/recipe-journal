@@ -2,6 +2,12 @@
 
 ---
 
+# Live App
+
+https://recipejournal-a7f08a286396.herokuapp.com/
+
+---
+
 # Description
 
 * This project is a Django CRUD web application built with Python and Django.
