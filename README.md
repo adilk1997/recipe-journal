@@ -4,7 +4,7 @@
 
 # Live App
 
-https://recipejournal-a7f08a286396.herokuapp.com/
+https://recipe-journal.onrender.com/
 
 ---
 
