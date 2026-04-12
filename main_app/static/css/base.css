@@ -59,7 +59,9 @@ ul {
 
 main {
     width: 100%;
-    padding: 0 10px;
+    flex: 1;
+    padding: 0;
+    margin: 0;
 }
 
 h2 {
@@ -166,8 +168,11 @@ nav li {
     }
 
     main {
-        max-width: 1300px;
+        width: 100%;
+        max-width: none;
         min-height: calc(100vh - 53px);
+        margin: 0;
+        padding: 0;
     }
 
     nav,
@@ -402,14 +407,14 @@ nav li {
 }
 
 .home-background {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    margin: 0;
+    padding: 40px;
     background-image: url("../images/food-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    min-height: calc(100vh - 60px);
-    padding: 40px;
-
     position: relative;
 }
 
